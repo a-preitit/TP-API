@@ -1,0 +1,66 @@
+#arriba{
+	background-image: url('../images/Fondo.jpg');
+}
+
+#titulo img{
+	margin: 0 34em;
+}
+
+#titulo h1{
+	font-size: 4em;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+}
+
+#t{
+	margin-left: 8.5em;
+}
+
+#descrip{
+	text-align: center;
+	color: white;
+	font-size: 2em;
+}
+
+#busq{
+	display: inline-block;
+    vertical-align: top;
+}
+
+#busq span{
+	margin-left: 16em;
+	color: white;
+    font-size: 2em;
+}
+
+#busq input{
+	margin-left: 2em;
+}
+
+#busq button{
+	margin: 1em 0 1em 19em;
+	font-size: 2em;
+}
+
+#abajo{
+	background-color: grey;
+}
+
+#abajo span{
+	color: white;
+	font-size: 1.75em;
+}
+
+#seg{
+	float: right;
+}
+
+#abajo img{
+	height: 30px;
+	width: 30px;
+}
+
+#imagen{
+	margin-left: 40em;
+}
