@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>TP API</title>
-	<link rel="stylesheet" type="text/css" href="./styles/main.css"/>
-	<style>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>TP API</title>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css"/>
+    <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
@@ -18,9 +20,77 @@
         margin: 0;
         padding: 0;
       }
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
     </style>
-<<<<<<< HEAD
-<<<<<<< HEAD
   </head>
   <body>
   	<div id="titulo">
@@ -38,7 +108,18 @@
         <button>Buscar</button>
       </div>
     
-    <div id="map"></div>
+        <div id="map"></div>
+		<div id="abajo">
+			<footer>
+				<div>				
+					<span id="pri">Made by: Augusto Toma, Joaquin Bazterrica y Axel Preiti</span>
+					<span id="seg">Powered by: Google Maps and OpenWeatherMap</span>
+				</div>
+				<img src="./images/twitter.png" id="imagen">
+				<img src="./images/Instagram.png">
+				<img src="./images/facebook.ico">
+			</footer>
+		</div>
     <script>
       // This example adds a search box to a map, using the Google Place Autocomplete
       // feature. People can enter geographical searches. The search box will return a
@@ -118,53 +199,4 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHc44RnvDZX15FmhtyHKa3JOLnnR380Sc&libraries=places&callback=initAutocomplete"
          async defer></script>
   </body>
-=======
-=======
->>>>>>> parent of 67b34ce... Buscador de lugares agregado
-</head>
-	<body>
-		<div id="arriba">
-			<div id="titulo">
-				<img src="./images/world.png">
-				<h1>Know Your Place</h1>
-			</div>
-			<div id="descrip">
-				<p>Busque el lugar que quiera consultar</p>
-			</div>
-			<div id="busq">
-				<div>
-					<span>Lugar:</span>
-					<input type="text" id="lugar">
-				</div>
-<<<<<<< HEAD
-				<button id="btn">Buscar</button>
-=======
-				<button>Buscar</button>
->>>>>>> parent of 67b34ce... Buscador de lugares agregado
-			</div>
-		</div>
-		<div id="map"></div>
-		<div id="abajo">
-			<footer>
-				<div>				
-					<span id="pri">Made by: Augusto Toma, Joaquin Bazterrica y Axel Preiti</span>
-					<span id="seg">Powered by: Google Maps and OpenWeatherMap</span>
-				</div>
-				<img src="./images/twitter.png" id="imagen">
-				<img src="./images/Instagram.png">
-				<img src="./images/facebook.ico">
-			</footer>
-		</div>
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHc44RnvDZX15FmhtyHKa3JOLnnR380Sc&callback=initMap"
-	    async defer></script>
-<<<<<<< HEAD
-	    <script src="http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=7659317ef39c1434b9621458678e63c3"></script>
-		<script type="text/javascript" src="./scripts/app.js"></script>
-	</body>
->>>>>>> f1e9834b319948cc66ad89a7c99ae96e1d950df4
-=======
-		<script type="text/javascript" src="./scripts/app.js"></script>
-	</body>
->>>>>>> parent of 67b34ce... Buscador de lugares agregado
 </html>
