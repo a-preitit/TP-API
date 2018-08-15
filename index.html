@@ -91,6 +91,7 @@
         width: 345px;
       }
     </style>
+<<<<<<< HEAD
   </head>
   <body>
   	<div id="titulo">
@@ -188,4 +189,42 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHc44RnvDZX15FmhtyHKa3JOLnnR380Sc&libraries=places&callback=initAutocomplete"
          async defer></script>
   </body>
+=======
+</head>
+	<body>
+		<div id="arriba">
+			<div id="titulo">
+				<img src="./images/world.png">
+				<h1>Know Your Place</h1>
+			</div>
+			<div id="descrip">
+				<p>Busque el lugar que quiera consultar</p>
+			</div>
+			<div id="busq">
+				<div>
+					<span>Lugar:</span>
+					<input type="text" id="lugar">
+				</div>
+				<button id="btn">Buscar</button>
+			</div>
+		</div>
+		<div id="map"></div>
+		<div id="abajo">
+			<footer>
+				<div>				
+					<span id="pri">Made by: Augusto Toma, Joaquin Bazterrica y Axel Preiti</span>
+					<span id="seg">Powered by: Google Maps and OpenWeatherMap</span>
+				</div>
+				<img src="./images/twitter.png" id="imagen">
+				<img src="./images/Instagram.png">
+				<img src="./images/facebook.ico">
+			</footer>
+		</div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHc44RnvDZX15FmhtyHKa3JOLnnR380Sc&callback=initMap"
+	    async defer></script>
+	    <script src="http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=7659317ef39c1434b9621458678e63c3"></script>
+		<script type="text/javascript" src="./scripts/app.js"></script>
+	</body>
+>>>>>>> f1e9834b319948cc66ad89a7c99ae96e1d950df4
 </html>
