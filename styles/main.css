@@ -3,7 +3,7 @@ body{
 }
 
 #titulo img{
-	margin: 0 34em;
+	margin: 1em 34em;
 }
 
 #titulo h1{
@@ -29,7 +29,7 @@ body{
 }
 
 #busq span{
-	margin-left: 16em;
+	margin-left: 12.5em;
 	color: white;
     font-size: 2em;
 }

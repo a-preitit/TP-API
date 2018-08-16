@@ -22,7 +22,7 @@ function getMyLocation(){
   	if(navigator.geolocation){
   		navigator.geolocation.getCurrentPosition(displayLocation);
   	} else {
-  		initMap();
+  		initAutocomplete();
   	}
 }
 
