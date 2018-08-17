@@ -96,20 +96,21 @@
   	<div id="titulo">
         <img src="./images/world.png">
         <h1>Know Your Place</h1>
-        </div>
-        <div id="descrip">
-        <p>Busque el lugar que quiera consultar</p>
-      </div>
-      <div id="busq">
+    </div>
+    <div id="descrip">
+        <p id="tex">Busque el lugar que quiera consultar</p>
+        <p id="leyenda"><i>Si desea conocer su ubicación actual, permita la ubicación. Si quiere buscar un lugar en particular, deniegue el permiso de ubicación</i></p>
+    </div>
+    <div id="busq">
         <div>
           <span>Lugar:</span>
           <input id="pac-input" class="controls" type="text" placeholder="Search Box">
         </div>
         <button>Buscar</button>
-      </div>
+    </div>
     
-        <div id="map"></div>
-		<div id="abajo">
+    <div id="map"></div>
+	<div id="abajo">
 			<footer>
 				<div>				
 					<span id="pri">Made by: Augusto Toma, Joaquin Bazterrica y Axel Preiti</span>
@@ -119,7 +120,7 @@
 				<img src="./images/Instagram.png">
 				<img src="./images/facebook.ico">
 			</footer>
-		</div>
+	</div>
     <script>
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {

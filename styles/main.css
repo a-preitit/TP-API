@@ -20,7 +20,14 @@ body{
 #descrip{
 	text-align: center;
 	color: white;
+}
+
+#descrip #tex{
 	font-size: 2em;
+}
+
+#descrip #leyenda{
+	font-size: 1.3em;
 }
 
 #busq{
