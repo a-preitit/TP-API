@@ -35,6 +35,16 @@ body{
     vertical-align: top;
 }
 
+#busq button{
+	display: none;
+	margin: 0 0 1em 16.5em;
+	font-size: 2em;
+}
+
+#buscador{
+	display: none;
+}
+
 #busq span{
 	margin-left: 12.5em;
 	color: white;

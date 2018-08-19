@@ -5,13 +5,19 @@ var latitude;
 var longitude;
 var apikey = "&APPID=7659317ef39c1434b9621458678e63c3";
 
+$('#btn').click(function(){
+      $('#buscador').show();
+      initAutocomplete();
+      $('#tiempo').css("display", "none");
+      $('#btn').css("display", "none");
+})
+
 window.onload = getMyLocation;
 function getMyLocation(){
   	if(navigator.geolocation){
   		navigator.geolocation.getCurrentPosition(displayLocation);
-      initAutocomplete();
   	} else {
-      
+
   	}
 }
 
@@ -48,6 +54,13 @@ function showMap(latLng){
           $('#max').text("Temp. Maxima: " + data.main.temp_max + String.fromCharCode(176)+"C");
         }
     });
+    $('#btn').show();
+    $('#btn').click(function(){
+      $('#buscador').show();
+      initAutocomplete();
+      $('#tiempo').css("display", "none");
+      $('#btn').css("display", "none");
+    })
 }
 
 function createMarker(latLng) {
