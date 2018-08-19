@@ -45,9 +45,30 @@ body{
 	margin-left: 2em;
 }
 
-#busq button{
-	margin: 1em 0 1em 19em;
-	font-size: 2em;
+#tiempo{
+	margin: 2em 20em;
+	padding: 1em;
+	background-color: orange;
+	display: none;
+	border: 2px solid;
+}
+
+#tiempo h3, h4{
+	text-align: center;
+}
+
+#tiempo #icono{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tiempo #temp{
+	margin: 0 5em;
+}
+
+#tiempo #max{
+	float: right;
 }
 
 #abajo{

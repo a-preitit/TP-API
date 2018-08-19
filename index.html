@@ -106,10 +106,17 @@
           <span>Lugar:</span>
           <input id="pac-input" class="controls" type="text" placeholder="Search Box">
         </div>
-        <button>Buscar</button>
-    </div>
-    
+    </div>    
     <div id="map"></div>
+    <div id="tiempo">
+      <h3 id="lugar">Lugar</h3>
+      <img id="icono">
+      <h4 id="condi">Condicion</h4>
+      <div id="temp">
+        <span id="min">Minimo</span>
+        <span id="max">Maximo</span>
+      </div>
+    </div>
 	<div id="abajo">
 			<footer>
 				<div>				
@@ -189,11 +196,8 @@
       }
     </script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHc44RnvDZX15FmhtyHKa3JOLnnR380Sc&callback=initMap"
-	async defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHc44RnvDZX15FmhtyHKa3JOLnnR380Sc&libraries=places&callback=initAutocomplete"
     async defer></script>
-	<script src="http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=7659317ef39c1434b9621458678e63c3"></script>
-	<script type="text/javascript" src="./scripts/app.js"></script>
+	  <script type="text/javascript" src="./scripts/app.js"></script>
   </body>
 </html>
