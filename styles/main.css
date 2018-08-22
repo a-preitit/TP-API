@@ -39,20 +39,28 @@ body{
 	display: none;
 	margin: 0 0 0 17em;
 	font-size: 2em;
+	border-radius: 8px;
 }
 
 #buscador{
 	display: none;
+	margin-left: 4em;
+}
+
+#buscador #submit{
+	border-radius: 8px;
 }
 
 #busq span{
 	margin-left: 12.5em;
+	margin-top: 0.2em;
 	color: white;
     font-size: 2em;
 }
 
 #busq input{
-	margin-left: 2em;
+	font-size: 1.2em;
+	margin-bottom: 1em;
 }
 
 #tiempo{
@@ -92,13 +100,19 @@ body{
 
 #seg{
 	float: right;
+	margin-top: 0.2em;
 }
 
 #abajo img{
 	height: 30px;
 	width: 30px;
+	margin-top: 0.3em;
 }
 
-#imagen{
-	margin-left: 40em;
+#imagen {
+	margin-left: 1em;
+}
+
+#simagen{
+	margin-right: 1em;
 }

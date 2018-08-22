@@ -106,7 +106,7 @@
         <div id="buscador">
           <span>Lugar:</span>
       	  <input id="address" type="textbox" value="">
-          <input id="submit" type="button" value="Geocode">
+          <input id="submit" type="button" value="Buscar">
         </div>
     </div>
     <div id="tiempo">
@@ -123,11 +123,11 @@
 			<footer>
 				<div>				
 					<span id="pri">Made by: Augusto Toma, Joaquin Bazterrica y Axel Preiti</span>
+					<img src="./images/twitter.png" id="imagen">
+					<img src="./images/Instagram.png">
+					<img src="./images/facebook.ico" id="simagen">
 					<span id="seg">Powered by: Google Maps and OpenWeatherMap</span>
 				</div>
-				<img src="./images/twitter.png" id="imagen">
-				<img src="./images/Instagram.png">
-				<img src="./images/facebook.ico">
 			</footer>
 	</div>
     <script>
@@ -141,7 +141,11 @@
         document.getElementById('submit').addEventListener('click', function() {
           geocodeAddress(geocoder, map);
         });
-      }
+       }
+
+      var latitude;
+      var longitude;
+      var apikey = "&APPID=7659317ef39c1434b9621458678e63c3";
 
 	   function geocodeAddress(geocoder, resultsMap) {
 		var address = document.getElementById('address').value;
@@ -152,13 +156,34 @@
 		    map: resultsMap,
 		    position: results[0].geometry.location
 		  });
-		 console.log(results[0].geometry.location.lat());
-		 console.log(results[0].geometry.location.lng());
+		  var latitude = results[0].geometry.location.lat();
+		  var longitude = results[0].geometry.location.lng();
+		  console.log(latitude, longitude);
+		  showForecast(latitude, longitude);
 		 } else {
 		   alert('Geocode was not successful for the following reason: ' + status);
 		 }
 		});
-	   }            
+	   }
+
+	   function showForecast(latitude, longitude){
+	   	console.log(latitude, longitude);
+	   	$.ajax({
+        	url: 'http://api.openweathermap.org/data/2.5/weather?lat=' +latitude+ '&lon=' +longitude+ '&units=metric&lang=es' + apikey,
+        	type: "GET",
+        	dataType: "jsonp",
+        	success: function(data){
+	          var icono = data.weather[0].icon;
+	          $('#tiempo').show();
+	          $('#lugar').text(data.name);
+	          $('#icono').attr('src', "http://openweathermap.org/img/w/" + icono + ".png");
+	          $('#condi').text(data.weather[0].description);
+	          $('#condi').css("text-transform", "uppercase");
+	          $('#min').text("Temp. Minima: " + data.main.temp_min + String.fromCharCode(176)+"C");
+	          $('#max').text("Temp. Maxima: " + data.main.temp_max + String.fromCharCode(176)+"C");
+        }
+	   });
+	  }
     </script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHc44RnvDZX15FmhtyHKa3JOLnnR380Sc&libraries=places&callback=initMap"

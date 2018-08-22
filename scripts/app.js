@@ -37,13 +37,13 @@ function showMap(latLng){
   	};
 
   	map = new google.maps.Map(document.getElementById('map'), mapOptions);
-	  console.log("Tu latitud es " + latitude + " y tu longitud es " + longitude);
+	  //console.log("Tu latitud es " + latitude + " y tu longitud es " + longitude);
     $.ajax({
         url: 'http://api.openweathermap.org/data/2.5/weather?lat=' +latitude+ '&lon=' +longitude+ '&units=metric&lang=es' + apikey,
         type: "GET",
         dataType: "jsonp",
         success: function(data){
-          console.log(data);
+          //console.log(data);
           var icono = data.weather[0].icon;
           $('#tiempo').show();
           $('#lugar').text(data.name);
