@@ -105,7 +105,8 @@
       <button id="btn">Buscar un Lugar</button>
         <div id="buscador">
           <span>Lugar:</span>
-          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+      	  <input id="address" type="textbox" value="">
+          <input id="submit" type="button" value="Geocode">
         </div>
     </div>
     <div id="tiempo">
@@ -130,76 +131,38 @@
 			</footer>
 	</div>
     <script>
-      function initAutocomplete() {
+      function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.549411, lng: -58.454080},
-      	  zoom: 15,
-          mapTypeId: 'roadmap'
+          zoom: 15,
+          center: {lat: -34.549420, lng: -58.454177}
         });
+        var geocoder = new google.maps.Geocoder();
 
-        // Create the search box and link it to the UI element.
-        var input = document.getElementById('pac-input');
-        var searchBox = new google.maps.places.SearchBox(input);
-
-        // Bias the SearchBox results towards current map's viewport.
-        map.addListener('bounds_changed', function() {
-          searchBox.setBounds(map.getBounds());
-        });
-
-        var markers = [];
-        // Listen for the event fired when the user selects a prediction and retrieve
-        // more details for that place.
-        searchBox.addListener('places_changed', function() {
-          var places = searchBox.getPlaces();
-
-          if (places.length == 0) {
-            return;
-          }
-
-          // Clear out the old markers.
-          markers.forEach(function(marker) {
-            marker.setMap(null);
-          });
-          markers = [];
-
-          // For each place, get the icon, name and location.
-          var bounds = new google.maps.LatLngBounds();
-          console.log(bounds.b, bounds.f);
-          places.forEach(function(place) {
-            if (!place.geometry) {
-              console.log("Returned place contains no geometry");
-              return;
-            }
-            var icon = {
-              url: place.icon,
-              size: new google.maps.Size(71, 71),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25)
-            };
-
-            // Create a marker for each place.
-            markers.push(new google.maps.Marker({
-              map: map,
-              icon: icon,
-              title: place.name,
-              position: place.geometry.location
-            }));
-
-            if (place.geometry.viewport) {
-              // Only geocodes have viewport.
-              bounds.union(place.geometry.viewport);
-            } else {
-              bounds.extend(place.geometry.location);
-            }
-          });
-          map.fitBounds(bounds);
+        document.getElementById('submit').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
         });
       }
+
+	   function geocodeAddress(geocoder, resultsMap) {
+		var address = document.getElementById('address').value;
+		geocoder.geocode({'address': address}, function(results, status) {
+		 if (status === 'OK') {
+		  resultsMap.setCenter(results[0].geometry.location);
+		  var marker = new google.maps.Marker({
+		    map: resultsMap,
+		    position: results[0].geometry.location
+		  });
+		 console.log(results[0].geometry.location.lat());
+		 console.log(results[0].geometry.location.lng());
+		 } else {
+		   alert('Geocode was not successful for the following reason: ' + status);
+		 }
+		});
+	   }            
     </script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHc44RnvDZX15FmhtyHKa3JOLnnR380Sc&libraries=places&callback=initAutocomplete"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHc44RnvDZX15FmhtyHKa3JOLnnR380Sc&libraries=places&callback=initMap"
     async defer></script>
-	  <script type="text/javascript" src="./scripts/app.js"></script>
+	<script type="text/javascript" src="./scripts/app.js"></script>
   </body>
 </html>

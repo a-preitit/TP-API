@@ -7,7 +7,7 @@ var apikey = "&APPID=7659317ef39c1434b9621458678e63c3";
 
 $('#btn').click(function(){
       $('#buscador').show();
-      initAutocomplete();
+      initMap();
       $('#tiempo').css("display", "none");
       $('#btn').css("display", "none");
 })
@@ -57,7 +57,7 @@ function showMap(latLng){
     $('#btn').show();
     $('#btn').click(function(){
       $('#buscador').show();
-      initAutocomplete();
+      initMap();
       $('#tiempo').css("display", "none");
       $('#btn').css("display", "none");
     })
